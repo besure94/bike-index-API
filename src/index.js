@@ -29,9 +29,21 @@ function printElements(response) {
     let lineBreak = document.createElement("br");
     bikeInfoDiv.append(lineBreak);
     // create bike link and add to div
+    let bikeDescription = document.createElement("p");
+    bikeDescription = response.bikes[i].description;
+    bikeInfoDiv.append(bikeDescription);
+    // create bike description and add to div
+    let lineBreakTwo = document.createElement("br");
+    bikeInfoDiv.append(lineBreakTwo);
+    let bikeSerialNumber = document.createElement("p");
+    bikeSerialNumber = response.bikes[i].serial;
+    bikeInfoDiv.append(bikeSerialNumber);
+    let lineBreakThree = document.createElement("br");
+    bikeInfoDiv.append(lineBreakThree);
+    // create bike serial number and add to div
     let bikeLink = document.createElement("a");
     bikeLink.setAttribute("href", response.bikes[i].url);
-    bikeLink.innerText = "link";
+    bikeLink.innerText = "Bike Listing";
     bikeInfoDiv.append(bikeLink);
     // add bike info div and list item to bike list
     liSingleBike.append(bikeInfoDiv);
