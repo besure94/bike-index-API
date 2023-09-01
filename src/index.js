@@ -61,16 +61,14 @@ function printElements(response) {
   bikeInfo.append(ulBikesList);
 }
 
-function printError(error, response) {
+function printError(error) {
   document.querySelector('#showBikes').innerHTML = `There was an error accessing the data for ${error[2]}: ${error[0].status} ${error[0].statusText}: ${error[1].message}`;
-  console.log(response);
 }
 
 function handleFormSubmission(event) {
   event.preventDefault();
   const city = document.querySelector('#location').value;
   document.querySelector('#location').value = null;
-  console.log(city);
   getBike(city);
 }
 
