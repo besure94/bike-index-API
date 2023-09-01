@@ -45,7 +45,15 @@ function printElements(response) {
     bikeLink.setAttribute("href", response.bikes[i].url);
     bikeLink.innerText = "Bike Listing";
     bikeInfoDiv.append(bikeLink);
+    let lineBreakFour = document.createElement("br");
+    bikeInfoDiv.append(lineBreakFour);
     // add bike info div and list item to bike list
+    let bikeImage = document.createElement("img");
+    bikeImage.src = response.bikes[i].large_img;
+    bikeImage.height = "400";
+    bikeImage.width = "500";
+    bikeInfoDiv.append(bikeImage);
+    // create bike image element and append to div
     liSingleBike.append(bikeInfoDiv);
     ulBikesList.append(liSingleBike);
   }
